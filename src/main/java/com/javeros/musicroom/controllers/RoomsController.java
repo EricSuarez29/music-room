@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/salas")
-public class SalasController {
+@RequestMapping("/rooms")
+public class RoomsController {
 	
     @GetMapping
 	public String showListSalas(Model model) {
 		
 		model.addAttribute("title", "Salas");
 		
-		return"salas/salas-list";
+		return"rooms/rooms-list";
 	}
 	
     
 	@GetMapping("/form")
 	public String showFormReservations(Model model) {
 		model.addAttribute("title", "Salas");
-		return "salas/salas-form";
+		return "rooms/rooms-form";
 	}
     
     
