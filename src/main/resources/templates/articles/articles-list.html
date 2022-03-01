@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<!-- HEADER -->
+	<header th:replace="layout/layout :: header"></header>
+
+	<!-- MAIN -->
+	<main class="container-fluid">
+		<section class="row">
+			<div class="mt-3 d-flex justify-content-center align-items-center">
+				<h1 class="text-white display-4" th:text="${title}"></h1>
+			</div>
+			<article class="col col-xxl-10 mx-auto">
+				<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
+					<div class="card-body">
+						<div class="container mb-3">
+							<a th:href="@{/articles/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nuevo</a>
+						</div>
+						<table class="table text-white">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nombre</th>
+									<th>Modelo</th>
+									<th>Marca</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Guitarra eléctrica</td>
+									<td>Les Paul Standard '50s P90 Gold Top</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Guitarra eléctrica</td>
+									<td>SG Tribute - Vintage Cherry Satin</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Guitarra eléctrica</td>
+									<td>70s Flying V</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Guitarra acústica</td>
+									<td>J-15 - Sunburst</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Guitarra eléctrica</td>
+									<td>SG Standard - Ebony</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>Guitarra eléctrica</td>
+									<td>Les Paul Studio - Tangenrine Burst</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>Guitarra eléctrica</td>
+									<td>SG Tribute - Natural Walnut</td>
+									<td>Gibson</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>Guitarra acústica</td>
+									<td>LL Series LL35 ARE</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>Guitarra acústica</td>
+									<td>A Series A5R ARE</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>Guitarra acústica</td>
+									<td>F/FX F310</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>Bajo eléctrico</td>
+									<td>BB Series Pro Series BBP34</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>Batería acústica</td>
+									<td>PHX</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>Batería acústica</td>
+									<td>RYDEEN RDP2F5</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>Batería Acústica</td>
+									<td>Live Custom Hybrid Oak</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>Teclado digital portátil</td>
+									<td>PSR-EW425</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>16</td>
+									<td>Piano acústico Premium</td>
+									<td>CF Series CFX</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>17</td>
+									<td>Piano híbrido Disklavier</td>
+									<td>ENSPIRE PRO DCFX ENPRO</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>18</td>
+									<td>Bajo eléctrico</td>
+									<td>Player Mustang 90</td>
+									<td>Fender</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>19</td>
+									<td>Fagot</td>
+									<td>YFG-811</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>Fagot</td>
+									<td>YFG-812</td>
+									<td>Yamaha</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>21</td>
+									<td>Micrófono vocal dinámico</td>
+									<td>SM58</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>22</td>
+									<td>Micrófono dinámico de instrumento</td>
+									<td>SM57</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>23</td>
+									<td>Micrófono vocal dinámico</td>
+									<td>BETA 58A</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>24</td>
+									<td>Micrófono dinámico de instrumento</td>
+									<td>BETA 57A</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>25</td>
+									<td>Micrófono vocal</td>
+									<td>SM7B</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>26</td>
+									<td>Micrófono de instrumento</td>
+									<td>BETA 27</td>
+									<td>Shure</td>
+									<td>
+										<div class="row">
+											<div class="col-6">
+												<a class="btn btn-outline-warning btn-sm"> <i
+													class="fa-solid fa-file"></i>
+												</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-outline-danger btn-sm"> <i
+													class="fa-solid fa-trash"></i>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
