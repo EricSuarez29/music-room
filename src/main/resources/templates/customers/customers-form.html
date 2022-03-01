@@ -14,29 +14,27 @@
                 <form>
                     <legend class="text-center display-5" th:text="${title}"></legend>
                     <div class="mt-3">
+<<<<<<< HEAD
                     
                         <input type="date" class="form-control bg-dark text-white" placeholder="Titulo">
+=======
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre" required title="Ingrese los datos solicitados">
+>>>>>>> a7238a6d9b32a7bdb757582f6a45aa41ec5d8450
                     </div>
 					<div class="mt-3">
-                        <input type="time" class="form-control bg-dark text-white" placeholder="Titulo">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido paterno" required title="Ingrese los datos solicitados">
                     </div>
 					<div class="mt-3">
-						<select class="form-select bg-dark text-white">
-							<option selected>Selecione la duración</option>
-							<option value="1">1:00 hrs</option>
-							<option value="2">1:30 hrs</option>
-							<option value="3">2:00 hrs</option>
-							<option value="4">2:30 hrs</option>
-							<option value="5">3:00 hrs</option>
-						</select>
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido materno">
                     </div>
                     <div class="mt-3">
-                        <textarea rows="3" class="form-control bg-dark text-white" placeholder="Comentario"></textarea>
+                        <input type="number" class="form-control bg-dark text-white" placeholder="Numero de teléfono" required title="Ingrese los datos solicitados">
                     </div>
-                    <input type="hidden">
-                    <input type="hidden">
-                    <div class="mt-3 text-center">
+                    <br>
+                    <div>
                         <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
+                        <input type="submit" class="btn btn-outline-primary px-5" value="Limpiar">
+                        <input type="submit" class="btn btn-outline-danger px-5" value="Eliminar">
                     </div>
                 </form>
             </div>
