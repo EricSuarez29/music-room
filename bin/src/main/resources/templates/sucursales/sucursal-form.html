@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+<!-- HEADER -->
+<header th:replace="layout/layout :: header"></header>
+
+<!-- MAIN -->
+<main class="container">
+    <section class="row justify-content-center">
+        <div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
+            <div class="card-body">
+                <form>
+                    <legend class="text-center display-5" th:text="${title}"></legend>
+                    <div class="mt-3">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre">
+                    </div>
+					<div class="mt-3">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Latitud">
+                    </div>
+                    <div class="mt-3">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Longitud">
+                    </div>
+                    <div class="mt-3">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Dirección">
+                    </div>
+                    <input type="hidden">
+                    <input type="hidden">
+                    <div class="mt-3 text-center">
+                        <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

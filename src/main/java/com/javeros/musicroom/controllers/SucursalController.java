@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/sucursal")
+@RequestMapping("/branch-offices")
 public class SucursalController {
 	
     @GetMapping
@@ -23,7 +23,6 @@ public class SucursalController {
 		model.addAttribute("title", "Sucursales");
 		return"sucursales/sucursal-form";
 	}
-    
     
     
 }

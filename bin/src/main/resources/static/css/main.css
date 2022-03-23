@@ -1,0 +1,24 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.img-background{
+	background-image: url('/imgs/guitar.png');
+	background-size: contain;
+	opacity: .8;
+	height: 13vh;
+	width: 100vw;
+}
