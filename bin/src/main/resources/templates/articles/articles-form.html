@@ -14,23 +14,17 @@
                 <form>
                     <legend class="text-center display-5" th:text="${title}"></legend>
                     <div class="mt-3">
-                        <input type="date" class="form-control bg-dark text-white" placeholder="Titulo">
-                        <br> 
-					</div>
-					<div>
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre" required title="Ingrese los datos solicitados">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre">
                     </div>
 					<div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido paterno" required title="Ingrese los datos solicitados">
-                    </div>
-					<div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido materno">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Modelo">
                     </div>
                     <div class="mt-3">
-                        <input type="number" class="form-control bg-dark text-white" placeholder="Numero de teléfono" required title="Ingrese los datos solicitados">
+                        <input type="text" class="form-control bg-dark text-white" placeholder="Marca">
                     </div>
-                    <br>
-                    <div>
+                    <input type="hidden">
+                    <input type="hidden">
+                    <div class="mt-3 text-center">
                         <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
                     </div>
                 </form>
