@@ -25,7 +25,7 @@ public class Article implements Serializable{
 	
 	@Column(length = 45)
 	private String branch;
-
+	
 	public Article() {
 	}
 

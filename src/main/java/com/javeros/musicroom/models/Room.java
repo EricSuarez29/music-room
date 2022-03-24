@@ -1,6 +1,7 @@
 package com.javeros.musicroom.models;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,8 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,8 +38,13 @@ public class Room implements Serializable{
 	
 	private Integer status;
 	
-	@OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<RoomArticle> roomArticles;
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "room_article", 
+			joinColumns = @JoinColumn(name = "room_id"),
+			inverseJoinColumns = @JoinColumn(name = "article_id")
+			)
+	private List<Article> articles;
 	
 	@JoinColumn(name = "sucursal_id")
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -104,20 +111,20 @@ public class Room implements Serializable{
 		this.status = status;
 	}
 
-	public List<RoomArticle> getRoomArticles() {
-		return roomArticles;
-	}
-
-	public void setRoomArticles(List<RoomArticle> roomArticles) {
-		this.roomArticles = roomArticles;
-	}
-
 	public BranchOffice getSucursal() {
 		return sucursal;
 	}
 
 	public void setSucursal(BranchOffice sucursal) {
 		this.sucursal = sucursal;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 
 	private static final long serialVersionUID = 1L;
