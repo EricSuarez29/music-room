@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Horario {
+public class Schedule {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class Horario {
 	@Column(length = 10, nullable = false)
 	private String end;
 	
-	public Horario() {
+	public Schedule() {
 	}
 
-	public Horario(Long id, String start, String end) {
+	public Schedule(Long id, String start, String end) {
 		super();
 		this.id = id;
 		this.start = start;

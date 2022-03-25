@@ -12,48 +12,47 @@
 			<div class="mt-3 d-flex justify-content-center align-items-center">
 				<h1 class="text-white display-4" th:text="${title}"></h1>
 			</div>
-			<article class="col col-xxl-10 mx-auto">
-				<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
-					<div class="card-body">
-						<div class="container mb-3">
-							<a th:href="@{/articles/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nuevo</a>
-						</div>
-						<table class="table text-white">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Nombre</th>
-									<th>Modelo</th>
-									<th>Sucursal</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="article: ${list}">
-									<td th:text="${article.id}"></td>
-									<td th:text="${article.name}"></td>
-									<td th:text="${article.model}"></td>
-									<td th:text="${article.branch}"></td>
-									<td>
-										<div class="row">
-											<div class="col-6">
-												<a class="btn btn-outline-warning btn-sm"> <i
-													class="fa-solid fa-file"></i>
-												</a>
-											</div>
-											<div class="col-6">
-												<a class="btn btn-outline-danger btn-sm"> <i
-													class="fa-solid fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
+				<div class="card-body">
+					<div class="container mb-3">
+						<a th:href="@{/articles/form}" class="btn btn-outline-success"><i
+							class="fa-solid fa-file-lines"></i> Nuevo</a>
 					</div>
+					<table class="table text-white">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nombre</th>
+								<th>Modelo</th>
+								<th>Sucursal</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="article: ${list}">
+								<td th:text="${article.id}"></td>
+								<td th:text="${article.name}"></td>
+								<td th:text="${article.model}"></td>
+								<td th:text="${article.branch}"></td>
+								<td>
+									<div class="row">
+										<div class="col-6">
+											<a class="btn btn-outline-warning btn-sm"> <i
+												class="fa-solid fa-file"></i>
+											</a>
+										</div>
+										<div class="col-6">
+											<a class="btn btn-outline-danger btn-sm"> <i
+												class="fa-solid fa-trash"></i>
+											</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-			</article>
+			</div>
 		</section>
 	</main>
 
