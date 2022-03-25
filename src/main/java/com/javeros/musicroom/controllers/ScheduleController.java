@@ -7,35 +7,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.javeros.musicroom.repository.IReservationRepository;
-import com.javeros.musicroom.repository.ISucursalesRepository;
+import com.javeros.musicroom.repository.IScheduleRepository;
 
 @Controller
-@RequestMapping("/branch-offices")
-public class SucursalController {
+@RequestMapping("/schedule")
+public class ScheduleController {
 	
-	private final ISucursalesRepository repository;
+	private final IScheduleRepository repository;
 	
 	
 	@Autowired
-	public SucursalController(ISucursalesRepository respository) {
+	public ScheduleController(IScheduleRepository respository) {
 		this.repository = respository;
 	}
-	
-    @GetMapping
-	public String showListSalas(Model model) {
-		
-		model.addAttribute("title", "Sucursales");
+
+	@GetMapping
+	public String showListSchedule(Model model) {
+		model.addAttribute("title", "Horarios");
 		model.addAttribute("list", repository.findAll());
-		
-		return"sucursales/sucursal-list";
+		return "schedule/schedule-list";
 	}
 	
-    
 	@GetMapping("/form")
 	public String showFormReservations(Model model) {
-		model.addAttribute("title", "Sucursales");
-		return"sucursales/sucursal-form";
+		model.addAttribute("title", "Horarios");
+		return "schedule/schedule-form";
 	}
-    
-    
 }
