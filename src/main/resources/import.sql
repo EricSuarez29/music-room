@@ -1,8 +1,8 @@
 
 -- RESERVATIONS
-INSERT INTO reservation(length, date, message) VALUES(130, NOW(), "Hello World");
-INSERT INTO reservation(length, date, message) VALUES(100, NOW(), "Deseo una coca de vidrio");
-INSERT INTO reservation(length, date, message) VALUES(80, NOW(), "Llegare un poco tarde");
+INSERT INTO reservation(length, date, message, status) VALUES(130, NOW(), "Hello World", 1);
+INSERT INTO reservation(length, date, message, status) VALUES(100, NOW(), "Deseo una coca de vidrio", 1);
+INSERT INTO reservation(length, date, message, status) VALUES(80, NOW(), "Llegare un poco tarde", 1);
 
 -- ARTICLES
 INSERT INTO article(name, model, branch) VALUES("Guitarra", "Les Paul", "Gibson");

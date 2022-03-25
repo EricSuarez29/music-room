@@ -31,6 +31,9 @@ public class Reservation implements Serializable{
 	
 	private String message;
 	
+	@Column(nullable = false)
+	private Integer status;
+	
 	@ManyToMany
 	@JoinTable(
 			name = "reservation_horario",
@@ -92,6 +95,22 @@ public class Reservation implements Serializable{
 	
 	public void setHorario(List<Schedule> horario) {
 		this.horario = horario;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	private static final long serialVersionUID = 1L;
