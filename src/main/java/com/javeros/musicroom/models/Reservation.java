@@ -31,13 +31,16 @@ public class Reservation implements Serializable{
 	
 	private String message;
 	
+	@Column(nullable = false)
+	private Integer status;
+	
 	@ManyToMany
 	@JoinTable(
 			name = "reservation_horario",
 			joinColumns = @JoinColumn(name = "reservation_id"),
-			inverseJoinColumns = @JoinColumn(name = "horario_id")
+			inverseJoinColumns = @JoinColumn(name = "schedule_id")
 			)
-	private List<Horario> horario;
+	private List<Schedule> horario;
 	
 	@OneToOne
 	@JoinColumn(name = "customer_id")
@@ -46,7 +49,7 @@ public class Reservation implements Serializable{
 	public Reservation() {
 	}
 
-	public Reservation(Long id, Double length, LocalDate date, String message, List<Horario> horario) {
+	public Reservation(Long id, Double length, LocalDate date, String message, List<Schedule> horario) {
 		this.id = id;
 		this.length = length;
 		this.date = date;
@@ -86,12 +89,28 @@ public class Reservation implements Serializable{
 		this.message = message;
 	}
 
-	public List<Horario> getHorario() {
+	public List<Schedule> getHorario() {
 		return horario;
 	}
 	
-	public void setHorario(List<Horario> horario) {
+	public void setHorario(List<Schedule> horario) {
 		this.horario = horario;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	private static final long serialVersionUID = 1L;
