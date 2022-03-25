@@ -15,8 +15,8 @@ INSERT INTO user(email, password, role) VALUES("luis@gmail.com", "luis", "custom
 INSERT INTO user(email, password, role) VALUES("fabrizio@gmail.com", "fabrizio", "customer");
 
 -- CUSTOMERS
-INSERT INTO customer(name, lastName, phone, create_at) VALUES("Luis", "Alvarez", "2343234", NOW());
-INSERT INTO customer(name, lastName, phone, create_at) VALUES("Fabrizio", "Saldivar", "1234556", NOW());
+INSERT INTO customer(name, last_name, phone, create_at) VALUES("Luis", "Alvarez", "2343234", NOW());
+INSERT INTO customer(name, last_name, phone, create_at) VALUES("Fabrizio", "Saldivar", "1234556", NOW());
 
 -- SCHEDULE 
 INSERT INTO schedule(start, end) VALUES("10:00", "11:00");
