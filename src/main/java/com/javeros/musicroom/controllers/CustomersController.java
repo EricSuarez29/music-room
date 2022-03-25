@@ -26,6 +26,7 @@ public class CustomersController
 	{
 		model.addAttribute("title", "Clientes");
 		model.addAttribute("list", repository.findAll());
+		
 		return "customers/customers-list";
 	}
 	

@@ -24,15 +24,16 @@
 									<th>Nombre</th>
 									<th>Apellidos</th>
 									<th>Numero de teléfono</th>
-									<th></th>
+									
 								</tr>
 							</thead>
 							<tbody>
 								<tr th:each="customer: ${list}">
-									<td th:text="${customer.id}">1</td th:text="">
-									<td th:text="${customer.name}">Emmanuel Alejandro</td th:text="">
-									<td th:text="${customer.lastName}">Hernandez Cornejo</td th:text>
+									<td th:text="${customer.id}">1</td>
+									<td th:text="${customer.name}">Emmanuel Alejandro</td>
+									<td th:text="${customer.lastName}">Hernandez Cornejo</td>
 									<td th:text="${customer.phone}">4776712536</td>
+								
 									<td>
 										<div class="row">
 											<div class="col-6">
@@ -47,7 +48,7 @@
 											</div>
 										</div>
 									</td>
-								</tr th:each="customer: ${list}">
+								</tr>
 								
 							</tbody>
 						</table>

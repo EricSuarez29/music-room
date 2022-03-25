@@ -22,6 +22,9 @@ public class User implements Serializable{
 	
 	@Column(nullable = false)
 	private String password;
+	
+	@Column(length = 20)
+	private String role;
 
 	public User() {
 	}
@@ -55,6 +58,14 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	private static final long serialVersionUID = 1L;
