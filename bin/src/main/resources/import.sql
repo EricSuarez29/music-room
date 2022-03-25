@@ -1,0 +1,1 @@
+INSERT INTO reservation(length, date, message) VALUES(130, NOW(), "Hello World");
