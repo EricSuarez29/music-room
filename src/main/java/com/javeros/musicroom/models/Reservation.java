@@ -13,7 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table
@@ -27,11 +30,11 @@ public class Reservation implements Serializable{
 	private Double length;
 	
 	@Column(nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 	
 	private String message;
 	
-	@Column(nullable = false)
 	private Integer status;
 	
 	@ManyToMany
@@ -45,6 +48,11 @@ public class Reservation implements Serializable{
 	@OneToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
+	
+	@PrePersist
+	public void init() {
+		this.status = 1;
+	}
 	
 	public Reservation() {
 	}
