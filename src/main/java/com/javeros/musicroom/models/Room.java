@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +29,7 @@ public class Room implements Serializable{
 	@Column(length = 45, nullable = false)
 	private String name;
 
-	@Column(length = 35, nullable = false)
+	//@Column(length = 35, nullable = false)
 	private String type;
 
 	private String description;
@@ -37,6 +38,11 @@ public class Room implements Serializable{
 	private Double priceHour;
 	
 	private Integer status;
+	
+	@PrePersist
+	public void init() {
+		this.status = 1;
+	}
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(

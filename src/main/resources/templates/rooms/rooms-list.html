@@ -16,7 +16,7 @@
 				<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
 					<div class="card-body">
 						<div class="container mb-3">
-							<a th:href="@{/reservations/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nueva</a>
+							<a th:href="@{/rooms/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nueva</a>
 						</div>
 						<table class="table text-white">
 							<thead>
@@ -44,7 +44,7 @@
 												</a>
 											</div>
 											<div class="col-6">
-												<a class="btn btn-outline-danger btn-sm"> <i
+												<a th:href="@{'/rooms/delete/' + ${room.id}}" class="btn btn-outline-danger btn-sm"> <i
 													class="fa-solid fa-trash"></i>
 												</a>
 											</div>

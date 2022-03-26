@@ -11,20 +11,20 @@
     <section class="row justify-content-center">
         <div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
             <div class="card-body">
-                <form>
+                <form th:action="@{/rooms}" method="POST" th:object="${room}">
                     <legend class="text-center display-5" th:text="${title}"></legend>
                     
                        <div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre de la sala">
+                        <input type="text" th:field="*{name}" class="form-control bg-dark text-white" placeholder="Nombre de la sala">
                     </div>
                     
                     
                      <div class="mt-3">
-                        <textarea rows="3" class="form-control bg-dark text-white" placeholder="Descripcion"></textarea>
+                        <textarea rows="3" th:field="*{description}" class="form-control bg-dark text-white" placeholder="Descripcion"></textarea>
                     </div>
                     
                     <div class="mt-3">
-                        <input type="number" class="form-control bg-dark text-white" placeholder="Precio">
+                        <input type="number" th:field="*{priceHour}" class="form-control bg-dark text-white" placeholder="Precio">
                     </div>
 					
                    
