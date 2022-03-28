@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.javeros.musicroom.models.Article;
 import com.javeros.musicroom.repository.IArticleRepository;
 
 @Controller
@@ -21,15 +24,28 @@ private final IArticleRepository repository;
 	}
 	
 	@GetMapping
-	public String showProductList(Model model) {
-		model.addAttribute("title", "Artículo");
-		model.addAttribute("list", repository.findAll());
-		return "articles/articles-list";
+	public String showListArticle(Model model) {
+		model.addAttribute("title", "Artículos");
+		model.addAttribute("list", repository.findByStatus(1));
+		return "article/article-list";
+	}
+	
+	@PostMapping
+	public String createArticle(Article article) {
+		repository.save(article);
+		return "redirect:/articles";
 	}
 	
 	@GetMapping("/form")
-	public String showProductForm(Model model) {
+	public String showFormArticle(Article article, Model model) {
 		model.addAttribute("title", "Artículo");
-		return "articles/articles-form";
+		return "article/article-form";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteById(@PathVariable("id") Long id) {
+		//repository.deleteById(id);
+		repository.setStatusZero(id);
+		return "redirect:/articles";
 	}
 }

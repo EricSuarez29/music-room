@@ -1,7 +1,7 @@
 -- ARTICLES
-INSERT INTO article(name, model, branch) VALUES("Guitarra", "Les Paul", "Gibson");
-INSERT INTO article(name, model, branch) VALUES("Guitarra", "Stratocaster", "Fender");
-INSERT INTO article(name, model, branch) VALUES("Guitarra", "Basic", "Squire");
+INSERT INTO article(name, model, branch, status) VALUES("Guitarra", "Les Paul", "Gibson", 1);
+INSERT INTO article(name, model, branch, status) VALUES("Guitarra", "Stratocaster", "Fender", 1);
+INSERT INTO article(name, model, branch, status) VALUES("Guitarra", "Basic", "Squire", 1);
 
 -- USER
 INSERT INTO user(email, password, role) VALUES("eric@gmail.com", "eric", "admin");

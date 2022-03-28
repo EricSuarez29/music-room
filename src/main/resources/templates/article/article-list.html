@@ -24,7 +24,7 @@
 								<th>#</th>
 								<th>Nombre</th>
 								<th>Modelo</th>
-								<th>Sucursal</th>
+								<th>Marca</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -42,7 +42,7 @@
 											</a>
 										</div>
 										<div class="col-6">
-											<a class="btn btn-outline-danger btn-sm"> <i
+											<a th:href="@{'/articles/delete/' + ${article.id}}" class="btn btn-outline-danger btn-sm"> <i
 												class="fa-solid fa-trash"></i>
 											</a>
 										</div>

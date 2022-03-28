@@ -1,9 +1,21 @@
 package com.javeros.musicroom.repository;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 import com.javeros.musicroom.models.Article;
 
 public interface IArticleRepository extends JpaRepository<Article, Long>{
 	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE article SET status = 0 WHERE id = ?1", nativeQuery = true)
+	int setStatusZero(Long id);
+	
+	List<Article> findByStatus(Integer id);
 }

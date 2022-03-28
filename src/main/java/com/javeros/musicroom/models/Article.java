@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -26,15 +27,23 @@ public class Article implements Serializable{
 	@Column(length = 45)
 	private String branch;
 	
+	private Integer status;
+	
+	@PrePersist
+	public void init() {
+		this.status = 1;
+	}
+	
 	public Article() {
 	}
 
-	public Article(Long id, String name, String model, String branch) {
+	public Article(Long id, String name, String model, String branch, Integer status) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.model = model;
 		this.branch = branch;
+		this.status = status;
 	}
 
 	public Long getId() {
@@ -67,6 +76,14 @@ public class Article implements Serializable{
 
 	public void setBranch(String branch) {
 		this.branch = branch;
+	}
+	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	private static final long serialVersionUID = 1L;
