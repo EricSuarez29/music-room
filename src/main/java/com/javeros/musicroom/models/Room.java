@@ -54,7 +54,7 @@ public class Room implements Serializable{
 	
 	@JoinColumn(name = "sucursal_id")
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private BranchOffice sucursal;
+	private BranchOffice branchOffice;
 
 	public Room(Long id, String name, String type, String description, Double priceHour, Integer status) {
 		super();
@@ -117,20 +117,20 @@ public class Room implements Serializable{
 		this.status = status;
 	}
 
-	public BranchOffice getSucursal() {
-		return sucursal;
-	}
-
-	public void setSucursal(BranchOffice sucursal) {
-		this.sucursal = sucursal;
-	}
-
 	public List<Article> getArticles() {
 		return articles;
 	}
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
+	}
+
+	public BranchOffice getBranchOffice() {
+		return branchOffice;
+	}
+
+	public void setBranchOffice(BranchOffice branchOffice) {
+		this.branchOffice = branchOffice;
 	}
 
 	private static final long serialVersionUID = 1L;

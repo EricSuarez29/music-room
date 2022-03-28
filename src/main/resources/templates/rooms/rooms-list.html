@@ -12,50 +12,54 @@
 			<div class="mt-3 d-flex justify-content-center align-items-center">
 				<h1 class="text-white display-4" th:text="${title}"></h1>
 			</div>
-			<article class="col col-xxl-10 mx-auto">
-				<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
-					<div class="card-body">
-						<div class="container mb-3">
-							<a th:href="@{/rooms/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nueva</a>
-						</div>
-						<table class="table text-white">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Nombre</th>
-									<th>Descripcion</th>
-									<th>Precio hora</th>
-									<th>Estatus</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="room: ${list}">
-									<td th:text="${room.id}">D</td>
-									<td th:text="${room.name}">Sala premium</td>
-									<td th:text="${room.description}">Se cuenta con tres guitarras guibson, 1 bajo fender, bateria Yamaha, piano y 3 microfonos Shure</td>
-									<td th:text="${room.priceHour}">$200</td>
-									<td th:text="${room.status}">Activo</td>
-									<td>
-										<div class="row">
-											<div class="col-6">
-												<a class="btn btn-outline-warning btn-sm"> <i
-													class="fa-solid fa-file"></i>
-												</a>
-											</div>
-											<div class="col-6">
-												<a th:href="@{'/rooms/delete/' + ${room.id}}" class="btn btn-outline-danger btn-sm"> <i
-													class="fa-solid fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
+				<div class="card-body">
+					<div class="container mb-3">
+						<a th:href="@{/rooms/form}" class="btn btn-outline-success"><i
+							class="fa-solid fa-file-lines"></i> Nueva</a>
 					</div>
+					<table class="table text-white">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Precio hora</th>
+								<th>Tipo</th>
+								<th>Sucursal</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="room: ${list}">
+								<td th:text="${room.id}">D</td>
+								<td th:text="${room.name}">Sala premium</td>
+								<td th:text="${room.description}">Se cuenta con tres
+									guitarras guibson, 1 bajo fender, bateria Yamaha, piano y 3
+									microfonos Shure</td>
+								<td th:text="${room.priceHour}">$200</td>
+								<td th:text="${room.type}"></td>
+								<td th:text="${room.branchOffice.name}"></td>
+								<td>
+									<div class="row">
+										<div class="col-6">
+											<a class="btn btn-outline-warning btn-sm"> <i
+												class="fa-solid fa-file"></i>
+											</a>
+										</div>
+										<div class="col-6">
+											<a th:href="@{'/rooms/delete/' + ${room.id}}"
+												class="btn btn-outline-danger btn-sm"> <i
+												class="fa-solid fa-trash"></i>
+											</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-			</article>
+			</div>
 		</section>
 	</main>
 

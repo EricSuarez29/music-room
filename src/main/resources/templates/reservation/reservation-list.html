@@ -26,6 +26,8 @@
 								<th>Hora</th>
 								<th>Duración (horas)</th>
 								<th>Comentario</th>
+								<th>Cliente</th>
+								<th>Sala</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -33,9 +35,11 @@
 							<tr th:each="reservation: ${list}">
 								<td th:text="${reservation.id}"></td>
 								<td th:text="${reservation.date}"></td>
-								<td th:text="${reservation.date}">3:00</td>
-								<td th:text="${reservation.length}">1:50h</td>
-								<td th:text="${reservation.message}">Llegare 5 min mas tarde</td>
+								<td th:text="${reservation.date}"></td>
+								<td th:text="${reservation.length}"></td>
+								<td th:text="${reservation.message}"></td>
+								<td th:text="${reservation.customer.name + ' ' + reservation.customer.lastName}"></td>
+								<td th:text="${reservation.room.name}"></td>
 								<td>
 									<div class="row">
 										<div class="col-6">

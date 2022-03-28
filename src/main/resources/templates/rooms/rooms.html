@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<!-- HEADER -->
+	<header th:replace="layout/layout :: header-public"></header>	
+	
+	<!-- MAIN -->
+	<main class="container">
+		<div>
+			<h1 class="display-4 mt-3">Reserva una sala</h1>	
+			<hr />
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-4">
+				<select class="form-select">
+					<!--<option th:each="branch : ${branchoffices}" th:value="${branch.id}"></option> -->
+				</select>	
+			</div>	
+		</div>
+		<section class="row">
+			<article th:each="room : ${list}" class="col col-md-6 col-xxl-3 p-2">
+				<div class="card bg-dark h-100 border border-dark card-room">
+					<img src="https://fastly.4sqi.net/img/general/600x600/71042676_a7i2cCEHiYPDHbPmEKd6xIeK59ft5KGYIOVlfqfhces.jpg" alt="Sala de Ensayo" class="img-card-top" />
+					<div class="card-footer">
+						<h4 th:text="${room.name}"></h4>	
+						<div class="p-2">
+							<p th:text="${room.description}"></p>
+						</div>
+						<div class="row">
+							<div class="col-6 text-start mt-3">
+								<span th:text="${'$' + room.priceHour + ' mx / hora'}"></span>
+							</div>
+							<div class="col-6 text-end">
+								<a href="" class="btn btn-outline-success">
+									Reservar
+								</a>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>	
+		</section>	
+	</main>
+	
+	<!-- FOOTER -->	
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<!-- HEADER -->
+	<header th:replace="layout/layout :: header-public"></header>
+
+	<!-- MAIN -->
+	<main class="container">
+		<section class="row">
+			<div class="card mt-3">
+				<div class="card-body p-3">
+					<article class="row">
+						<form action="" th:object="${reservation}">
+							<div class="col-6">
+								<img class="img-fluid"
+									src="https://fastly.4sqi.net/img/general/600x600/71042676_a7i2cCEHiYPDHbPmEKd6xIeK59ft5KGYIOVlfqfhces.jpg"
+									alt="Sala" />
+							</div>
+							<div class="col-6">
+								<h1 th:text="${room.name}" class="display-5"></h1>
+								<p></p>
+							</div>
+						</form>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

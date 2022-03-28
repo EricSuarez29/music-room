@@ -49,6 +49,10 @@ public class Reservation implements Serializable{
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
+	@OneToOne
+	@JoinColumn(name = "room_id")
+	private Room room;
+	
 	@PrePersist
 	public void init() {
 		this.status = 1;
@@ -57,12 +61,16 @@ public class Reservation implements Serializable{
 	public Reservation() {
 	}
 
-	public Reservation(Long id, Double length, LocalDate date, String message, List<Schedule> horario) {
+	public Reservation(Long id, Double length, LocalDate date, String message, Integer status, List<Schedule> horario,
+			Customer customer, Room room) {
 		this.id = id;
 		this.length = length;
 		this.date = date;
 		this.message = message;
+		this.status = status;
 		this.horario = horario;
+		this.customer = customer;
+		this.room = room;
 	}
 
 	public Long getId() {
@@ -119,6 +127,14 @@ public class Reservation implements Serializable{
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
 	private static final long serialVersionUID = 1L;

@@ -1,9 +1,3 @@
-
--- RESERVATIONS
-INSERT INTO reservation(length, date, message, status) VALUES(130, NOW(), "Hello World", 1);
-INSERT INTO reservation(length, date, message, status) VALUES(100, NOW(), "Deseo una coca de vidrio", 1);
-INSERT INTO reservation(length, date, message, status) VALUES(80, NOW(), "Llegare un poco tarde", 1);
-
 -- ARTICLES
 INSERT INTO article(name, model, branch) VALUES("Guitarra", "Les Paul", "Gibson");
 INSERT INTO article(name, model, branch) VALUES("Guitarra", "Stratocaster", "Fender");
@@ -29,3 +23,8 @@ INSERT INTO branch_office(name, length, latitud, status, address) VALUES("Sucurs
 -- ROOMS
 INSERT INTO room(name, type, description, price_hour, status, sucursal_id) VALUES("Sala Pation Rococo", "Premium", "En un lugar de la mancha", 200, 1, 1);
 INSERT INTO room(name, type, description, price_hour, status, sucursal_id) VALUES("Sala Last Dinosaurs", "Black Diamon", "En un lugar de la mancha", 400, 1, 2);
+
+-- RESERVATIONS
+INSERT INTO reservation(length, date, message, status, customer_id, room_id) VALUES(130, NOW(), "Hello World", 1, 1, 1);
+INSERT INTO reservation(length, date, message, status, customer_id, room_id) VALUES(100, NOW(), "Deseo una coca de vidrio", 1, 2, 2);
+INSERT INTO reservation(length, date, message, status, customer_id, room_id) VALUES(80, NOW(), "Llegare un poco tarde", 1, 1, 2);
