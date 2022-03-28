@@ -11,28 +11,23 @@
     <section class="row justify-content-center">
         <div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
             <div class="card-body">
-                <form>
+                <form th:action="@{/customers}" method="POST" th:object="${customer}">
                     <legend class="text-center display-5" th:text="${title}"></legend>
-                    <div class="mt-3">
-                        <input type="date" class="form-control bg-dark text-white" placeholder="Titulo">
-                        <br> 
-					</div>
 					<div>
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre" required title="Ingrese los datos solicitados">
+                        <input type="text" th:field="*{name}" class="form-control bg-dark text-white" placeholder="Nombre" required title="Ingrese los datos solicitados">
                     </div>
 					<div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido paterno" required title="Ingrese los datos solicitados">
-                    </div>
-					<div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Apellido materno">
+                        <input type="text" th:field="*{lastName}" class="form-control bg-dark text-white" placeholder="Apellidos" required title="Ingrese los datos solicitados">
                     </div>
                     <div class="mt-3">
-                        <input type="number" class="form-control bg-dark text-white" placeholder="Numero de teléfono" required title="Ingrese los datos solicitados">
+                        <input type="number" th:field="*{phone}" class="form-control bg-dark text-white" placeholder="Numero de teléfono" required title="Ingrese los datos solicitados">
                     </div>
                     <br>
                     <div>
                         <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
                     </div>
+                    <input type="hidden" th:field="*{id}">
+                    <input type="hidden" th:field="*{createAt}">
                 </form>
             </div>
         </div>
