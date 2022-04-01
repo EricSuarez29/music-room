@@ -34,7 +34,7 @@ public class Customer implements Serializable{
 	@Column(name = "create_at")
 	private LocalDate createAt;
 	
-	private Integer status;
+	private Integer status; //Estatus del cliente
 	
 	@JoinColumn(name = "user_id")
 	@OneToOne(cascade = CascadeType.ALL)

@@ -43,6 +43,14 @@ public class CustomerController
 		
 	}
 	
+	@GetMapping("/edit/{id}") 
+	public String getcustomerToEdit (@PathVariable("id") Long id, Model model) 
+	{
+		Customer customer = customerRepository.getById(id); 
+		model.addAttribute("customer", customer); 
+		return "customers/customers-form";
+	}
+	
 	@GetMapping("/form")
 	public String showFormCustomer(Customer customer, Model model)
 	{
