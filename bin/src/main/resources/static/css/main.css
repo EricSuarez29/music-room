@@ -22,3 +22,11 @@ footer{
 	height: 13vh;
 	width: 100vw;
 }
+
+.card-room{
+	transition: transform 0.3s;
+}
+
+.card-room:hover{
+	transform: scale(0.95);
+}

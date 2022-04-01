@@ -11,22 +11,22 @@
     <section class="row justify-content-center">
         <div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
             <div class="card-body">
-                <form>
+                <form th:action="@{/branch-offices}" method="POST" th:object="${branchOffice}">
                     <legend class="text-center display-5" th:text="${title}"></legend>
                     <div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Nombre">
+                        <input type="text" th:field="*{name}" class="form-control bg-dark text-white" placeholder="Nombre">
                     </div>
 					<div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Latitud">
+                        <input type="text" th:field="*{latitud}" class="form-control bg-dark text-white" placeholder="Latitud">
                     </div>
                     <div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Longitud">
+                        <input type="text" th:field="*{length}" class="form-control bg-dark text-white" placeholder="Longitud">
                     </div>
                     <div class="mt-3">
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Dirección">
+                        <input type="text" th:field="*{address}" class="form-control bg-dark text-white" placeholder="Dirección">
                     </div>
-                    <input type="hidden">
-                    <input type="hidden">
+                    <input type="hidden" th:field="*{status}"/>
+                    <input type="hidden" th:field="*{id}"/>
                     <div class="mt-3 text-center">
                         <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
                     </div>

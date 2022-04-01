@@ -22,6 +22,7 @@ public class Schedule {
 	@Column(length = 10, nullable = false)
 	private String end;
 	
+	
 	public Schedule() {
 	}
 

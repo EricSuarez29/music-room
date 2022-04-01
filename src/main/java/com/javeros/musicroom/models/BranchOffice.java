@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +26,11 @@ public class BranchOffice implements Serializable{
 	
 	@Column(length = 100)
 	private String address;
+	
+	@PrePersist
+	public void init() {
+		this.status=1;
+	}
 
 	public BranchOffice(Long id, String name, Double length, Double latitud, Integer status, String address) {
 		this.id = id;
