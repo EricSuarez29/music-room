@@ -36,6 +36,18 @@ private final IArticleRepository repository;
 		return "redirect:/articles";
 	}
 	
+	@GetMapping("/edit/{id}")
+	public String getArticleToEdit(@PathVariable("id") Long id, Model model) {
+		Article article = repository.getById(id);
+		model.addAttribute("article", article);
+		return "article/article-form";
+	}
+
+	/*
+	@PostMapping("/update/{id}")
+	public String updateArticle(Article article) {
+	}*/
+	
 	@GetMapping("/form")
 	public String showFormArticle(Article article, Model model) {
 		model.addAttribute("title", "Artículo");

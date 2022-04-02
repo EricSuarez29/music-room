@@ -20,9 +20,9 @@
 			</div>	
 		</div>
 		<section class="row">
-			<article th:each="room : ${list}" class="col col-md-6 col-xxl-3 p-2">
+			<article th:each="room : ${list}" class="col-6 col-lg-4 col-xxl-3 p-2">
 				<div class="card bg-dark h-100 border border-dark card-room">
-					<img src="https://fastly.4sqi.net/img/general/600x600/71042676_a7i2cCEHiYPDHbPmEKd6xIeK59ft5KGYIOVlfqfhces.jpg" alt="Sala de Ensayo" class="img-card-top" />
+					<img src="https://fastly.4sqi.net/img/general/600x600/71042676_a7i2cCEHiYPDHbPmEKd6xIeK59ft5KGYIOVlfqfhces.jpg" th:alt="${room.name}" class="img-card-top" />
 					<div class="card-footer">
 						<h4 th:text="${room.name}"></h4>	
 						<div class="p-2">
