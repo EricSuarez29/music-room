@@ -26,58 +26,18 @@
 									<th>Latitud</th>
 									<th>Longitud</th>
 									<th>Dirección</th>
+									
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>Music Room</td>
-									<td>-32.923644</td>
-									<td>-7.1517857</td>
-									<th>Rio de lo Gómez #2020</th>
-									<td>
-										<div class="row">
-											<div class="col-6">
-												<a class="btn btn-outline-warning btn-sm"> <i
-													class="fa-solid fa-file"></i>
-												</a>
-											</div>
-											<div class="col-6">
-												<a class="btn btn-outline-danger btn-sm"> <i
-													class="fa-solid fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Music Room</td>
-									<td>-30.421944</td>
-									<td>-5.8311957</td>
-									<th>Jardines del Moral #503</th>
-									<td>
-										<div class="row">
-											<div class="col-6">
-												<a class="btn btn-outline-warning btn-sm"> <i
-													class="fa-solid fa-file"></i>
-												</a>
-											</div>
-											<div class="col-6">
-												<a class="btn btn-outline-danger btn-sm"> <i
-													class="fa-solid fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>								
-								<tr>
-									<td>3</td>
-									<td>Music Room</td>
-									<td>-31.281938</td>
-									<td>-6.09844138</td>
-									<th>Las Torres #210</th>
+									<tr th:each="BranchOffice: ${list}">
+										<td th:text="${BranchOffice.id}"></td>
+										<td th:text="${BranchOffice.name}"></td>
+										<td th:text="${BranchOffice.length}"></td>
+										<td th:text="${BranchOffice.latitud}"></td>
+										<td th:text="${BranchOffice.address}"></td>
 									<td>
 										<div class="row">
 											<div class="col-6">

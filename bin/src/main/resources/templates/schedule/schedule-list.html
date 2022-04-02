@@ -15,31 +15,23 @@
 			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
 				<div class="card-body">
 					<div class="container mb-3">
-						<a th:href="@{/reservations/form}" class="btn btn-outline-success"><i
+						<a th:href="@{/schedule/form}" class="btn btn-outline-success"><i
 							class="fa-solid fa-file-lines"></i> Nueva</a>
 					</div>
 					<table class="table text-white">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Fecha</th>
-								<th>Hora</th>
-								<th>Duración (horas)</th>
-								<th>Comentario</th>
-								<th>Cliente</th>
-								<th>Sala</th>
+								<th>Inicio</th>
+								<th>Fin</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="reservation: ${list}">
-								<td th:text="${reservation.id}"></td>
-								<td th:text="${reservation.date}"></td>
-								<td th:text="${reservation.date}"></td>
-								<td th:text="${reservation.length}"></td>
-								<td th:text="${reservation.message}"></td>
-								<td th:text="${reservation.customer.name + ' ' + reservation.customer.lastName}"></td>
-								<td th:text="${reservation.room.name}"></td>
+							<tr th:each="schedule: ${list}">
+								<td th:text="${schedule.id}"></td>
+								<td th:text="${schedule.start}"></td>
+								<td th:text="${schedule.end}"></td>
 								<td>
 									<div class="row">
 										<div class="col-6">
@@ -48,7 +40,7 @@
 											</a>
 										</div>
 										<div class="col-6">
-											<a th:href="@{'/reservations/delete/' + ${reservation.id}}" class="btn btn-outline-danger btn-sm"> <i
+											<a class="btn btn-outline-danger btn-sm"> <i
 												class="fa-solid fa-trash"></i>
 											</a>
 										</div>

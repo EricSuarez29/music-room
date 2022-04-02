@@ -15,31 +15,25 @@
 			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
 				<div class="card-body">
 					<div class="container mb-3">
-						<a th:href="@{/reservations/form}" class="btn btn-outline-success"><i
-							class="fa-solid fa-file-lines"></i> Nueva</a>
+						<a th:href="@{/articles/form}" class="btn btn-outline-success"><i
+							class="fa-solid fa-file-lines"></i> Nuevo</a>
 					</div>
 					<table class="table text-white">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Fecha</th>
-								<th>Hora</th>
-								<th>Duración (horas)</th>
-								<th>Comentario</th>
-								<th>Cliente</th>
-								<th>Sala</th>
+								<th>Nombre</th>
+								<th>Modelo</th>
+								<th>Marca</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="reservation: ${list}">
-								<td th:text="${reservation.id}"></td>
-								<td th:text="${reservation.date}"></td>
-								<td th:text="${reservation.date}"></td>
-								<td th:text="${reservation.length}"></td>
-								<td th:text="${reservation.message}"></td>
-								<td th:text="${reservation.customer.name + ' ' + reservation.customer.lastName}"></td>
-								<td th:text="${reservation.room.name}"></td>
+							<tr th:each="article: ${list}">
+								<td th:text="${article.id}"></td>
+								<td th:text="${article.name}"></td>
+								<td th:text="${article.model}"></td>
+								<td th:text="${article.branch}"></td>
 								<td>
 									<div class="row">
 										<div class="col-6">
@@ -48,7 +42,7 @@
 											</a>
 										</div>
 										<div class="col-6">
-											<a th:href="@{'/reservations/delete/' + ${reservation.id}}" class="btn btn-outline-danger btn-sm"> <i
+											<a th:href="@{'/articles/delete/' + ${article.id}}" class="btn btn-outline-danger btn-sm"> <i
 												class="fa-solid fa-trash"></i>
 											</a>
 										</div>

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -33,14 +34,16 @@ public class Customer implements Serializable{
 	@Column(name = "create_at")
 	private LocalDate createAt;
 	
+	private Integer status; //Estatus del cliente
+	
 	@JoinColumn(name = "user_id")
 	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
 	
-	public Customer() {
-	}
+	public Customer() {}
 
-	public Customer(Long id, String name, String lastName, String phone, LocalDate createAt, User user) {
+	public Customer(Long id, String name, String lastName, String phone, LocalDate createAt, User user) 
+	{
 		super();
 		this.id = id;
 		this.name = name;
@@ -96,6 +99,16 @@ public class Customer implements Serializable{
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Integer getStatus()
+	{
+		return status;
+	}
+
+	public void setStatus(Integer status)
+	{
+		this.status = status;
 	}
 
 	private static final long serialVersionUID = 1L;
