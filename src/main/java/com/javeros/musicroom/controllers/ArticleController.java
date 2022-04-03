@@ -17,7 +17,6 @@ public class ArticleController {
 	
 private final IArticleRepository repository;
 	
-	
 	@Autowired
 	public ArticleController(IArticleRepository respository) {
 		this.repository = respository;
@@ -42,11 +41,6 @@ private final IArticleRepository repository;
 		model.addAttribute("article", article);
 		return "article/article-form";
 	}
-
-	/*
-	@PostMapping("/update/{id}")
-	public String updateArticle(Article article) {
-	}*/
 	
 	@GetMapping("/form")
 	public String showFormArticle(Article article, Model model) {
@@ -56,7 +50,6 @@ private final IArticleRepository repository;
 	
 	@GetMapping("/delete/{id}")
 	public String deleteById(@PathVariable("id") Long id) {
-		//repository.deleteById(id);
 		repository.setStatusZero(id);
 		return "redirect:/articles";
 	}

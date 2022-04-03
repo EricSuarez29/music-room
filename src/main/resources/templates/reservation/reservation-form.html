@@ -3,38 +3,68 @@
 <head th:replace="layout/layout :: head">
 </head>
 <body>
-<!-- HEADER -->
-<header th:replace="layout/layout :: header"></header>
+	<!-- HEADER -->
+	<header th:replace="layout/layout :: header"></header>
 
-<!-- MAIN -->
-<main class="container">
-    <section class="row justify-content-center">
-        <div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
-            <div class="card-body">
-                <form th:action="@{/reservations}" method="POST" th:object="${reservation}">
-                    <legend class="text-center display-5" th:text="${title}"></legend>
-                    <div class="mt-3">
-                        <input type="date" th:field="*{date}" class="form-control bg-dark text-white" placeholder="Titulo">
-                    </div>
-					<div class="mt-3">
-                        <input type="time" class="form-control bg-dark text-white" placeholder="Titulo">
-                    </div>
-					<div class="mt-3">
-						<input type="number" th:field="*{length}" class="form-control bg-dark text-white" placeholder="Duraci�n"/>	
-                    </div>
-                    <div class="mt-3">
-                        <textarea rows="3" th:field="*{message}" class="form-control bg-dark text-white" placeholder="Comentario"></textarea>
-                    </div>
-					<div class="mt-3 text-center">
-                        <input type="submit" class="btn btn-outline-success px-5" value="Guardar">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-</main>
+	<!-- MAIN -->
+	<main class="container">
+		<section class="row justify-content-center">
+			<div class="card col-md-8 col-xl-6 mt-5 bg-dark bg-opacity-50">
+				<div class="card-body">
+					<form th:action="@{/reservations}" method="POST"
+						th:object="${reservation}">
+						<h1 class="text-center display-5" th:text="${title}"></h1>
+						<div class="mt-3">
+							<input type="date" th:field="*{date}" id="datepicker"
+								class="form-control bg-dark text-white">
+						</div>
+						<h5 class="mt-3">Horarios Disponibles</h5>
+						<hr />
+						<div id="divSchedules" class="btn-group d-flex justify-content-center" role="group">
+							<div class="card bg-light bg-opacity-25 border-primary text-center">
+								<div class="card-body">
+									<b>Aún no se ha selecionado una fecha o una sala</b>
+								</div>
+							</div>
+						</div>
+						<div class="mt-3">
+							<textarea rows="3" th:field="*{message}"
+								class="form-control bg-dark text-white" placeholder="Comentario"></textarea>
+						</div>
+						<div class="mt-3 row">
+						<div class="col-6">
+							<select id="branchOffices" class="form-select bg-dark text-white">
+								<option value="0">Selecione una Sucursal</option>
+							</select>
+						</div>
+						<div class="col-6">
+							<select id="rooms" th:field="*{room}"
+								class="form-select bg-dark text-white">
+								<option value="0">Selecione una Sala</option>
+							</select>
+						</div>
+						</div>
+						<div class="mt-3">
+							<select th:field="*{customer}"
+								class="form-select bg-dark text-white">
+								<option value="0">Selecione un cliente</option>
+								<option th:each="customer : ${customers}"
+									th:text="${customer.name + ' ' + customer.lastName}"
+									th:value="${customer.id}"></option>
+							</select>
+						</div>
+						<div class="mt-3 text-center">
+							<input type="submit" class="btn btn-outline-success px-5"
+								value="Guardar">
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<script th:src="@{/components/reservation.js}"></script>
+	</main>
 
-<!-- FOOTER -->
-<footer th:replace="layout/layout :: footer"></footer>
+	<!-- FOOTER -->
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>

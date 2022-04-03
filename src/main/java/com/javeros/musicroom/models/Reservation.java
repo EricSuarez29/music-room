@@ -27,9 +27,6 @@ public class Reservation implements Serializable{
 	private Long id;
 	
 	@Column(nullable = false)
-	private Double length;
-	
-	@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 	
@@ -39,11 +36,11 @@ public class Reservation implements Serializable{
 	
 	@ManyToMany
 	@JoinTable(
-			name = "reservation_horario",
+			name = "reservation_schedule",
 			joinColumns = @JoinColumn(name = "reservation_id"),
 			inverseJoinColumns = @JoinColumn(name = "schedule_id")
 			)
-	private List<Schedule> horario;
+	private List<Schedule> schedules;
 	
 	@OneToOne
 	@JoinColumn(name = "customer_id")
@@ -61,14 +58,13 @@ public class Reservation implements Serializable{
 	public Reservation() {
 	}
 
-	public Reservation(Long id, Double length, LocalDate date, String message, Integer status, List<Schedule> horario,
+	public Reservation(Long id, LocalDate date, String message, Integer status, List<Schedule> horario,
 			Customer customer, Room room) {
 		this.id = id;
-		this.length = length;
 		this.date = date;
 		this.message = message;
 		this.status = status;
-		this.horario = horario;
+		this.schedules = horario;
 		this.customer = customer;
 		this.room = room;
 	}
@@ -79,14 +75,6 @@ public class Reservation implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Double getLength() {
-		return length;
-	}
-
-	public void setLength(Double length) {
-		this.length = length;
 	}
 
 	public LocalDate getDate() {
@@ -103,14 +91,6 @@ public class Reservation implements Serializable{
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public List<Schedule> getHorario() {
-		return horario;
-	}
-	
-	public void setHorario(List<Schedule> horario) {
-		this.horario = horario;
 	}
 
 	public Integer getStatus() {
@@ -135,6 +115,14 @@ public class Reservation implements Serializable{
 
 	public void setRoom(Room room) {
 		this.room = room;
+	}
+
+	public List<Schedule> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<Schedule> schedules) {
+		this.schedules = schedules;
 	}
 
 	private static final long serialVersionUID = 1L;

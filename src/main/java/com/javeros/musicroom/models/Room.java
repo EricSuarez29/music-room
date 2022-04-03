@@ -52,7 +52,7 @@ public class Room implements Serializable{
 			)
 	private List<Article> articles;
 	
-	@JoinColumn(name = "sucursal_id")
+	@JoinColumn(name = "branch_office_id")
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private BranchOffice branchOffice;
 
