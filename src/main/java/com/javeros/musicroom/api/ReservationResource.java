@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.javeros.musicroom.models.Customer;
 import com.javeros.musicroom.models.Reservation;
 import com.javeros.musicroom.models.Schedule;
+import com.javeros.musicroom.repository.ICustomerRepository;
 import com.javeros.musicroom.repository.IReservationRepository;
 import com.javeros.musicroom.repository.IScheduleRepository;
 
@@ -27,11 +29,13 @@ public class ReservationResource {
 	
 	private final IReservationRepository repository;
 	private final IScheduleRepository scheduleRepository;
+	private final ICustomerRepository customerRepository;
 	
 	@Autowired
-	public ReservationResource(IReservationRepository respository, IScheduleRepository scheduleRepository) {
+	public ReservationResource(IReservationRepository respository, IScheduleRepository scheduleRepository, ICustomerRepository customerRepository) {
 		this.repository = respository;
 		this.scheduleRepository = scheduleRepository;
+		this.customerRepository = customerRepository;
 	}
 	
 	@PostMapping
@@ -52,10 +56,21 @@ public class ReservationResource {
 		return ResponseEntity.ok(null);
 	}
 	
+	@GetMapping("/customer")
+	public ResponseEntity<List<Customer>> getCustomersByRegex(@RequestParam("filter") String filter){
+		List<Customer> list = customerRepository.findCustomerByFilter(filter);
+		return ResponseEntity.ok(list);
+	}
+	
 	@GetMapping("/schedule")
-	public ResponseEntity<List<Schedule>> getSchedules(@RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date){
-		List<Schedule> list = scheduleRepository.findAvailableSchedules(date);
-		list.stream().map(Schedule::getStart).forEach(System.out::println);
+	public ResponseEntity<List<Schedule>> getSchedules(
+			@RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
+			@RequestParam("room") Long id
+			){
+		
+		if(id == null || date == null) return ResponseEntity.badRequest().build();
+
+		List<Schedule> list = scheduleRepository.findAvailableSchedules(date, id);
 		return ResponseEntity.ok(list);
 	}
 }

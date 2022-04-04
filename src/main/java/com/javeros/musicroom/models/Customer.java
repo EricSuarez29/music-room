@@ -1,6 +1,7 @@
 package com.javeros.musicroom.models;
 
 import java.io.Serializable;
+
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -51,6 +52,12 @@ public class Customer implements Serializable{
 		this.phone = phone;
 		this.createAt = createAt;
 		this.user = user;
+	}
+	
+	@PrePersist
+	public void init() {
+		this.createAt = LocalDate.now();
+		this.status = 1;
 	}
 
 	public Long getId() {

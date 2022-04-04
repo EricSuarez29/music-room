@@ -18,40 +18,49 @@
 							<input type="date" th:field="*{date}" id="datepicker"
 								class="form-control bg-dark text-white">
 						</div>
+
+						<div class="mt-3 row">
+							<div class="col-6">
+								<select id="branchOffices"
+									class="form-select bg-dark text-white">
+									<option value="0">Selecione una Sucursal</option>
+								</select>
+							</div>
+							<div class="col-6">
+								<select id="rooms" th:field="*{room}"
+									class="form-select bg-dark text-white">
+									<option value="0">Selecione una Sala</option>
+								</select>
+							</div>
+						</div>
 						<h5 class="mt-3">Horarios Disponibles</h5>
 						<hr />
-						<div id="divSchedules" class="btn-group d-flex justify-content-center" role="group">
-							<div class="card bg-light bg-opacity-25 border-primary text-center">
+						<div id="divSchedules"
+							class="btn-group d-flex justify-content-center" role="group">
+							<div
+								class="card bg-light bg-opacity-25 border-primary text-center">
 								<div class="card-body">
 									<b>Aún no se ha selecionado una fecha o una sala</b>
 								</div>
 							</div>
 						</div>
+
+						<div class="mt-3">
+							<div class="wrapper">
+								<div class="search-input">
+									<input type="text" class="form-control bg-dark text-white"
+										placeholder="Buscar cliente">
+									<div class="autocom-box"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+						</div>
+						
+						<input type="hidden" id="customer-id" th:field="*{customer}"/>
+
 						<div class="mt-3">
 							<textarea rows="3" th:field="*{message}"
 								class="form-control bg-dark text-white" placeholder="Comentario"></textarea>
-						</div>
-						<div class="mt-3 row">
-						<div class="col-6">
-							<select id="branchOffices" class="form-select bg-dark text-white">
-								<option value="0">Selecione una Sucursal</option>
-							</select>
-						</div>
-						<div class="col-6">
-							<select id="rooms" th:field="*{room}"
-								class="form-select bg-dark text-white">
-								<option value="0">Selecione una Sala</option>
-							</select>
-						</div>
-						</div>
-						<div class="mt-3">
-							<select th:field="*{customer}"
-								class="form-select bg-dark text-white">
-								<option value="0">Selecione un cliente</option>
-								<option th:each="customer : ${customers}"
-									th:text="${customer.name + ' ' + customer.lastName}"
-									th:value="${customer.id}"></option>
-							</select>
 						</div>
 						<div class="mt-3 text-center">
 							<input type="submit" class="btn btn-outline-success px-5"

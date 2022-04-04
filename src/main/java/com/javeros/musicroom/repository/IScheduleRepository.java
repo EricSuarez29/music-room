@@ -16,7 +16,8 @@ public interface IScheduleRepository extends JpaRepository<Schedule, Long>{
 			+ "( SELECT schedule_id FROM reservation_schedule RS "
 			+ "INNER JOIN reservation R "
 			+ "ON R.id = RS.reservation_id "
-			+ "WHERE DATE_FORMAT(R.date, \"%d-%m-%Y\") LIKE DATE_FORMAT(?1, \"%d-%m-%Y\")"
+			+ "WHERE DATE_FORMAT(R.date, \"%d-%m-%Y\") LIKE DATE_FORMAT(?1, \"%d-%m-%Y\") "
+			+ "AND R.room_id = ?2"
 			+ ")", nativeQuery = true)
-	List<Schedule> findAvailableSchedules(LocalDate date);
+	List<Schedule> findAvailableSchedules(LocalDate date, Long id);
 }

@@ -17,5 +17,10 @@ public interface IReservationRepository extends JpaRepository<Reservation, Long>
 	@Query(value = "UPDATE Reservation SET status = 0 WHERE id = ?1", nativeQuery = true)
 	int setStatusZero(Long id);
 	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE Reservation SET status = 2 WHERE id = ?1", nativeQuery = true)
+	int atendById(Long id);
+	
 	List<Reservation> findByStatus(Integer id);
 }

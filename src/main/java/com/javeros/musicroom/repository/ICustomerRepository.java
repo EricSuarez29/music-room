@@ -16,10 +16,12 @@ public interface ICustomerRepository extends JpaRepository<Customer, Long>
 	@Modifying
 	@Transactional
 	@Query(value="UPDATE customer SET status = 0 WHERE id =?1", nativeQuery=true)
-	
 	int setStatusZero(Long id);
 	
-	List <Customer> findByStatus(Integer id);
+	List<Customer> findByStatus(Integer id);
+	
+	@Query(value="SELECT * FROM customer WHERE name REGEXP ?1 OR last_name REGEXP ?1 AND status = 1", nativeQuery = true)
+	List<Customer> findCustomerByFilter(String filter);
 }
 
 

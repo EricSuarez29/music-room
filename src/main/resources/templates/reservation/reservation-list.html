@@ -15,8 +15,17 @@
 			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
 				<div class="card-body">
 					<div class="container mb-3">
-						<a th:href="@{/reservations/form}" class="btn btn-outline-success"><i
+						<div class="row">
+							<div class="col-6">
+							<a th:href="@{/reservations/form}" class="btn btn-outline-success"><i
 							class="fa-solid fa-file-lines"></i> Nueva</a>
+							</div>	
+							<div class="col-6">
+								<a th:href="@{/reservations?status=1}" th:class="'btn btn-sm me-2 ' + ${#strings.equals(param.status,'1') || #strings.equals(param.status, null) ? 'btn-primary' : 'btn-outline-primary'}">Activas</a>	
+								<a th:href="@{/reservations?status=0}" th:class="'btn btn-sm me-2 ' + ${#strings.equals(param.status,'0')? 'btn-danger' : 'btn-outline-danger'}">Canceladas</a>	
+								<a th:href="@{/reservations?status=2}" th:class="'btn btn-sm ' + ${#strings.equals(param.status,'2')? 'btn-warning' : 'btn-outline-warning'}">Atendidas</a>	
+							</div>
+						</div>	
 					</div>
 					<table class="table text-white">
 						<thead>
@@ -41,8 +50,8 @@
 								<td>
 									<div class="row">
 										<div class="col-6">
-											<a class="btn btn-outline-warning btn-sm"> <i
-												class="fa-solid fa-file"></i>
+											<a th:href="@{'/reservations/atend/' + ${reservation.id}}" class="btn btn-outline-warning btn-sm"> 
+												<i class="fa-solid fa-bell-concierge"></i>
 											</a>
 										</div>
 										<div class="col-6">

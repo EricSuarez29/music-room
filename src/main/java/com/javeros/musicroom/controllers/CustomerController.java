@@ -1,6 +1,7 @@
 package com.javeros.musicroom.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.javeros.musicroom.models.Customer;
 import com.javeros.musicroom.repository.ICustomerRepository;
-import com.javeros.musicroom.repository.IReservationRepository;
 
 @Controller
 @RequestMapping("/customers")
@@ -29,7 +29,7 @@ public class CustomerController
 	public String showListCustomer(Customer customer, Model model)
 	{
 		model.addAttribute("title", "Clientes");
-		model.addAttribute("list", customerRepository.findAll());
+		model.addAttribute("list", customerRepository.findByStatus(1));
 		
 		return "customers/customers-list";
 	}
