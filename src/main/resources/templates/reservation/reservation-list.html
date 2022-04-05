@@ -36,7 +36,7 @@
 								<th>Comentario</th>
 								<th>Cliente</th>
 								<th>Sala</th>
-								<th></th>
+								<th th:if="${#strings.equals(param.status,'1') || #strings.equals(param.status, null)}"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -47,7 +47,7 @@
 								<td th:text="${reservation.message}"></td>
 								<td th:text="${reservation.customer.name + ' ' + reservation.customer.lastName}"></td>
 								<td th:text="${reservation.room.name}"></td>
-								<td>
+								<td th:if="${#strings.equals(param.status,'1') || #strings.equals(param.status, null)}">
 									<div class="row">
 										<div class="col-6">
 											<a th:href="@{'/reservations/atend/' + ${reservation.id}}" class="btn btn-outline-warning btn-sm"> 

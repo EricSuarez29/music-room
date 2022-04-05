@@ -12,51 +12,51 @@
 			<div class="mt-3 d-flex justify-content-center align-items-center">
 				<h1 class="text-white display-4" th:text="${title}"></h1>
 			</div>
-				<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
-					<div class="card-body">
-						<div class="container mb-3">
-							<a th:href="@{/customers/form}" class="btn btn-outline-success"><i class="fa-solid fa-file-lines"></i> Nueva </a>
-						<br><br>
-						<table class="table text-white">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Nombre</th>
-									<th>Apellidos</th>
-									<th>Numero de teléfono</th>
-									<th></th>
-									
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="customer: ${list}">
-									<td th:text="${customer.id}">1</td>
-									<td th:text="${customer.name}">Emmanuel Alejandro</td>
-									<td th:text="${customer.lastName}">Hernandez Cornejo</td>
-									<td th:text="${customer.phone}">4776712536</td>
-								
-									<td>
-										<div class="row">
-											<div class="col-6">
-												<a th:href = "@{'/customers/edit/' + ${customer.id}}"
-												class="btn btn-outline-warning btn-sm"> <i
-													class="fa-solid fa-file"></i>
-												</a>
-											</div>
-											<div class="col-6">
-												<a th:href = "@{'/customers/delete/' + ${customer.id}}" 
-													class="btn btn-outline-danger btn-sm"> 
-													<i class="fa-solid fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								
-							</tbody>
-						</table>
+			<div class="card mt-3 bg-dark bg-opacity-50 p-0 shadow rounded-3">
+				<div class="card-body">
+					<div class="container mb-3">
+						<a th:href="@{/customers/form}" class="btn btn-outline-success"><i
+							class="fa-solid fa-file-lines"></i> Nueva </a>
 					</div>
+					<table class="table text-white">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nombre</th>
+								<th>Apellidos</th>
+								<th>Numero de teléfono</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="customer: ${list}">
+								<td th:text="${customer.id}">1</td>
+								<td th:text="${customer.name}">Emmanuel Alejandro</td>
+								<td th:text="${customer.lastName}">Hernandez Cornejo</td>
+								<td th:text="${customer.phone}">4776712536</td>
+
+								<td>
+									<div class="row">
+										<div class="col-6">
+											<a th:href="@{'/customers/edit/' + ${customer.id}}"
+												class="btn btn-outline-warning btn-sm"> <i
+												class="fa-solid fa-file"></i>
+											</a>
+										</div>
+										<div class="col-6">
+											<a th:href="@{'/customers/delete/' + ${customer.id}}"
+												class="btn btn-outline-danger btn-sm"> <i
+												class="fa-solid fa-trash"></i>
+											</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
 				</div>
+			</div>
 		</section>
 	</main>
 

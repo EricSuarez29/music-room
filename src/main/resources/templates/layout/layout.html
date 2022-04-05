@@ -8,6 +8,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 	integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" th:href="@{/assets/favicon.ico}" />
 <title th:text="${title}"></title>
 </head>
 <body>
@@ -15,7 +16,7 @@
 	<header th:fragment="header" class="sticky-top">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
-				<a class="navbar-brand" href="#"><i class="fa-solid fa-guitar"></i>
+				<a class="navbar-brand" th:href="@{/main}"><i class="fa-solid fa-guitar"></i>
 					Music Room</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -25,7 +26,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a>
+						<li class="nav-item"><a class="nav-link" th:href="@{/main}">Home</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
 							th:href="@{/reservations}">Reservaciones</a></li>
@@ -58,21 +59,22 @@
 			</div>
 		</div>
 
+		<div>
+			<div th:if="${messageSuccess}" class="alert alert-success alert-dismissible fade show"
+				role="alert">
+				<strong th:text="${messageSuccess}"></strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
+			</div>
 
-		<div class="position-fixed top-5 end-5 p-3" style="z-index: 11">
-			<div class="toast" role="alert" aria-live="assertive"
-				aria-atomic="true">
-				<div class="toast-header">
-					<img src="..." class="rounded me-2" alt="..."> <strong
-						class="me-auto">Bootstrap</strong> <small class="text-muted">11
-						mins ago</small>
-					<button type="button" class="btn-close" data-bs-dismiss="toast"
-						aria-label="Close"></button>
-				</div>
-				<div class="toast-body">Hello, world! This is a toast message.
-				</div>
+			<div th:if="${messageError}" class="alert alert-danger alert-dismissible fade show"
+				role="alert">
+				<strong th:text="${messageError}"></strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
 			</div>
 		</div>
+
 	</header>
 
 	<!-- FOOTER -->
@@ -100,17 +102,17 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a>
+						<li class="nav-item"><a class="nav-link" href="#">Inicio</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
-							th:href="@{/rooms-public}">Salas</a></li>
+							href="#">Salas</a></li>
 						<li class="nav-item"><a class="nav-link"
-							th:href="@{/branch-offices}">Sucursales</a></li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/about}">Quienes
+							href="#">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Quienes
 								somos</a></li>
 					</ul>
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a href="" class="nav-link">Iniciar
+						<li class="nav-item"><a th:href="@{/signin}" class="nav-link">Iniciar
 								Sesión</a></li>
 						<li class="nav-item"><a href="" class="nav-link">Registrarse</a>
 						</li>

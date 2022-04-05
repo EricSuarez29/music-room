@@ -1,18 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/layout :: head">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" th:href="@{/assets/favicon.ico}" />
+<style>
+html {
+	background-image:
+		url('/assets/background.jpg');
+	background-size: cover;
+}
+
+</style>
+<title>Home</title>
 </head>
-<body>
-	<!-- HEADER -->	
-	<header th:replace="layout/layout :: header-public">
-	</header>
-	
+<body class="bg-dark bg-opacity-50">
+	<!-- HEADER -->
+	<header th:replace="layout/layout :: header"></header>
+
 	<!-- MAIN -->
-	<main>
+	<main class="container">
+		<section class="row p-5 text-center justify-content-center align-items-center">
+			<h1 class="display-1">Music Room</h1>
+			<hr>
+			<p class="lead">En un lugar de la mancha de cuyo nombre...</p>
+		</section>
 	</main>
-	
+
 	<!-- FOOTER -->
-	<footer th:replace="layout/layout :: footer">
-	</footer>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>

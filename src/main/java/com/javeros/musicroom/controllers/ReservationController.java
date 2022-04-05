@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javeros.musicroom.models.Customer;
 import com.javeros.musicroom.models.Reservation;
@@ -54,8 +55,9 @@ public class ReservationController {
 	}
 	
 	@PostMapping
-	public String createReservation(Reservation reservation) {
+	public String createReservation(Reservation reservation, RedirectAttributes flash) {
 		repository.save(reservation);
+		flash.addFlashAttribute("messageSuccess", "Reservación creada correctamente");
 		return "redirect:/reservations";
 	}
 	
@@ -66,14 +68,16 @@ public class ReservationController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String deleteById(@PathVariable("id") Long id) {
+	public String deleteById(@PathVariable("id") Long id, RedirectAttributes flash) {
 		repository.setStatusZero(id);
+		flash.addFlashAttribute("messageSuccess", "Reservación eliminada correctamente");
 		return "redirect:/reservations";
 	}
 	
 	@GetMapping("/atend/{id}")
-	public String atendById(@PathVariable("id") Long id) {
+	public String atendById(@PathVariable("id") Long id, RedirectAttributes flash) {
 		repository.atendById(id);
+		flash.addFlashAttribute("messageSuccess", "Reservación atendida correctamente");
 		return "redirect:/reservations";
 	}
 	

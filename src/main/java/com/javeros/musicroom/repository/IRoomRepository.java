@@ -14,11 +14,12 @@ public interface IRoomRepository extends JpaRepository<Room, Long> {
 
 	@Modifying
 	@Transactional
-	@Query(value="UPDATE room SET status =0 WHERE id =?1", nativeQuery=true)
+	@Query(value="UPDATE room SET status = 0 WHERE id =?1", nativeQuery=true)
 	int setStatusZero(Long id);
 	
 	@Query(value = "SELECT * FROM room R INNER JOIN branch_office B ON R.branch_office_id = B.id WHERE B.id = ?1", nativeQuery=true)
 	List<Room> findByBranchOfficeId(Long id);
 	
+	@Query(value = "SELECT * FROM room R INNER JOIN branch_office B ON R.branch_office_id = B.id WHERE B.status = 1 AND R.status = 1", nativeQuery = true)
 	List <Room> findByStatus(Integer id);
 }

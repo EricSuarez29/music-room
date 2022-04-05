@@ -9,14 +9,8 @@ body{
     background-repeat: no-repeat;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
 .img-background{
-	background-image: url('/imgs/guitar.png');
+	background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701289582.jpg');
 	background-size: contain;
 	opacity: .8;
 	height: 13vh;

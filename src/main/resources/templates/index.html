@@ -1,37 +1,166 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/main.css}">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 	integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-html {
-	background-image:
-		url('https://tecnoiglesia.com/wp-content/uploads/2019/12/xmarketing-para-estudios-de-grabacion-810x456.jpg.pagespeed.ic_.1te_vc1soW.jpg');
-	background-size: cover;
-}
-
-</style>
-<title>Home</title>
+	<link rel="icon" th:href="@{/assets/favicon.ico}" />
+<link rel="stylesheet" th:href="@{/css/estilos.css}" />
 </head>
-<body class="bg-dark bg-opacity-50">
-	<!-- HEADER -->
-	<header th:replace="layout/layout :: header"></header>
+<body class="bg-dark text-white rounded-top">
 
-	<!-- MAIN -->
-	<main class="container">
-		<section class="row p-5 text-center justify-content-center align-items-center">
-			<h1 class="display-1">Music Room</h1>
-			<hr>
-			<p class="lead">En un lugar de la mancha de cuyo nombre...</p>
-		</section>
-	</main>
+	<header th:replace="layout/layout :: header-public"></header>
 
-	<!-- FOOTER -->
-	<footer th:replace="layout/layout :: footer"></footer>
+    <main class="bg-dark bg-opacity-50">
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestro producto</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="img/product.jpg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Las mejores salas</h3>
+                    <p>En music room podra sentirte completamente comodo y en casa pues ofrecemos 
+                        una gran variedad de salas para cualquier tipo de gustos y economia, respetamos su 
+                        espacio asi que sientase libre de contar y hacer uso de cada una de las cosas que vienen
+                        estan a su completa disposicion.
+                    </p>
+                    <h3><span>2</span>Servico</h3>
+                    <p>En music room estamos atentos a cualquier comentario con respecto a las salas,
+                        sientase libre de comentarnos cualquier observacion para nosotros solucionarlo, cualquier
+                        sugerencia, aviso, observacion estamos a su completa disposicion y servicio.</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img2.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img3.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img4.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img5.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img6.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img7.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono1.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clientes contenedor">
+            <h2 class="titulo">Que dicen nuestros clientes</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="img/face1.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Lorena1rose</h4>
+                        <p>Es la unica empresa en donde tienen TODOS los instrumentos, solo es llegar
+                            y tocar pues ya todo esta afinado y ecualizado, FELICIDADES!
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/face2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>AlexLora21</h4>
+                        <p>De las mejores salas honestamente paresiera un estudio de lo profesional que se ve</p>
+                    </div>
+                </div>
+              
+            </div>
+        </section>
+        <section class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion1.svg" alt="">
+                        <h3>Bebidas</h3>
+                        <p>Se te seco la garganta de tanto cantar? contamos con unas bien frias y todo
+                            tipo de bebidas para llevar hasta tu sala 
+                        </p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion2.svg" alt="">
+                        <h3>Aire acondicionado</h3>
+                        <p>Todas las salas cuentas con aire acondicionado sientase libre de controlarlo a su comididad</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion4.svg" alt="">
+                        <h3>Grabaciones</h3>
+                        <p>Te esta gustando el ensayo? solo dinos y contamos con un buen equipo de grabacion y audio para filmar tus rolas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>4776505263</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>musicRoom@gamil.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>BLVD MORELOS col pedregal - calle servantino #804</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; JAVEROS </h2>
+    </footer>
+    <div th:replace="layout/layout :: footer"></div>
 </body>
+
 </html>
